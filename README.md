@@ -1,5 +1,5 @@
 # [Restful-booker](https://restful-booker.herokuapp.com/) API automation project
-<img title="Restful-booker" src="images/api-top.jpg"></div>
+<img title="Restful-booker" src="images/api-top.png"></div>
 
 ##  <a name="contents">:page_facing_up: Сontents</a>
 - [Tools and technologies](#hammer_and_wrench-tools-and-technologies)
