@@ -67,6 +67,19 @@ Each test case have information such as `severity`, `description`, `duration`, `
 
 <img src="images/allure-result-test-example.jpg" alt="Allure Report suites">
 
+<img src="images/allure-result-test-example-2.jpg" alt="Allure Report suites">
+
+### Attachment examples
+
+<img src="images/allure-result-test-example-auth.jpg" alt="Allure Report auth example">
+
+<img src="images/allure-result-test-example-request.jpg" alt="Allure Report request example">
+
+Before tests,  a simple **health check** request to confirm whether the API is up and running is checked. \
+Also creates a new **auth token** to use for access to the `PUT` and `DELETE` /booking.
+
+<img src="images/allure-result-test-example-setup.jpg" alt="Allure Report test set up">
+
 [back to Contents ⬆](#contents)
 
 ## <img width="3%" title="Allure TestOps" src="https://github.com/gloomyana/gloomyana/blob/main/icons/allure_testops.svg"> [Allure TestOps](https://allure.autotests.cloud/project/3221/dashboards) integration
