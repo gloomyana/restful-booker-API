@@ -16,10 +16,11 @@ import static ru.gloomyana.specs.RestfulBookerSpec.baseRequestSpec;
 @Tag("api")
 @Owner("gloomyana")
 public class DeleteBookingTests extends TestBase {
+
     @Test
     @DisplayName("Delete request returns status 200")
     public void deleteBookingReturns200() {
-        step("Make booking delete request and verify it returns status 200", () ->
+        step("Make booking delete request and verify it returns status code 200", () ->
                 given(baseRequestSpec)
                         .header("Cookie", "token=" + token)
                         .when()

@@ -23,7 +23,7 @@ public class RestfulBookerSpec {
             .expectBody("token", notNullValue())
             .build();
 
-    public static ResponseSpecification bookingCreateResponseSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification createBookingResponseSpec = new ResponseSpecBuilder()
             .log(STATUS)
             .log(BODY)
             .expectBody("bookingid", notNullValue())

@@ -16,7 +16,7 @@ public class TestData {
     String checkin = checkInDate.format(dateTimeFormatter);
     String checkout = checkOutDate.format(dateTimeFormatter);
 
-    String[] needs = new String[]{"Breakfast", "None"};
+    String[] needs = new String[]{"Breakfast", "Pets are allowed", "Twin beds", "Free parking", "None"};
 
     String username = "admin",
             password = "password123",

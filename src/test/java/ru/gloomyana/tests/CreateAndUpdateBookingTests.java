@@ -23,7 +23,7 @@ import static ru.gloomyana.specs.RestfulBookerSpec.*;
 public class CreateAndUpdateBookingTests extends TestBase {
 
     @Test
-    @DisplayName("Successful create a new booking in the API")
+    @DisplayName("Successful create a new booking")
     public void successfulCreateNewBooking() {
         TestData testData = new TestData();
         BookingRequestModel bookingRequestModel = testData.createBookingRequestModal();
@@ -37,7 +37,7 @@ public class CreateAndUpdateBookingTests extends TestBase {
                         .post("/booking")
                         .then()
                         .statusCode(200)
-                        .spec(bookingCreateResponseSpec)
+                        .spec(createBookingResponseSpec)
                         .extract().as(CreateBookingResponseModel.class));
         step("Verify successful create new booking id", () ->
                 assertThat(response.getBookingId()).isNotNull());
@@ -68,5 +68,21 @@ public class CreateAndUpdateBookingTests extends TestBase {
                 assertThat(response.getLastname()).isEqualTo(bookingRequestModel.getLastname()));
         step("Verify successful update total price", () ->
                 assertThat(response.getTotalPrice()).isEqualTo(bookingRequestModel.getTotalPrice()));
+    }
+
+    @Test
+    @DisplayName("Unsuccessful try to update booking without auth token")
+    public void UpdateBookingWithoutAuthTokenReturns403() {
+        TestData testData = new TestData();
+        BookingRequestModel bookingRequestModel = testData.createBookingRequestModal();
+
+        step("Make update data request without auth token and verify it returns status code 403", () ->
+                given(baseRequestSpec)
+                        .body(bookingRequestModel)
+                        .contentType(JSON)
+                        .when()
+                        .put("booking/7")
+                        .then()
+                        .assertThat().statusCode(403));
     }
 }

@@ -19,10 +19,11 @@ import static ru.gloomyana.specs.RestfulBookerSpec.*;
 @Tag("api")
 @Owner("gloomyana")
 public class GetBookingTests {
+
     @Test
     @DisplayName("Get all booking ids returns status 200")
     public void getAllBookingIdsReturns200() {
-        step("Make get all booking request and verify it returns status 200", () ->
+        step("Make get all booking request and verify it returns status code 200", () ->
                 given(baseRequestSpec)
                         .when()
                         .get("/booking")

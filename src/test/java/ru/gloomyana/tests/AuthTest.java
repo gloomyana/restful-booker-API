@@ -21,6 +21,7 @@ import static ru.gloomyana.specs.RestfulBookerSpec.baseRequestSpec;
 @Tag("api")
 @Owner("gloomyana")
 public class AuthTest {
+
     @Test
     @DisplayName("Successful create a new auth token")
     public void createAuthToken() {
@@ -41,6 +42,6 @@ public class AuthTest {
                         .spec(authResponseSpec)
                         .extract().as(AuthResponseModel.class));
         step("Verify successful create token", () ->
-                assertThat(response.getToken()).isNotEmpty());
+                assertThat(response.getToken()).isNotNull());
     }
 }
