@@ -21,23 +21,25 @@
 <a href="https://web.telegram.org/"><img src="https://github.com/gloomyana/gloomyana/blob/main/icons/telegram.svg" title="Telegram" alt="Telegram" width="50" height="50"/></a> 
 
 ## :white_check_mark: Test cases
-- [x] Successful create a new auth token
-- [x] Successful update all booking data by id
-- [x] Successful create a new booking
-- [x] Get booking request returns not null data
-- [x] Delete request returns status 200
-- [x] Get all booking ids returns status 200
-- [x] Health check endpoint to confirm API is up
+- [x] Successful create a new auth token `POST`
+- [x] Successful create a new booking `POST`
+- [x] Successful update booking data `PUT`
+- [x] Unsuccessful update booking without auth token `PUT`
+- [x] Get booking request returns not null data `GET`
+- [x] Get all booking ids returns status 200 `GET`
+- [x] Delete request returns status 200 `DELETE`
+- [x] Health check endpoint to confirm API is up `GET`
 
 ## :arrow_forward: How to run
 To run tests locally and in [Jenkins](https://jenkins.autotests.cloud/job/gloomyana-restful-booker-API/) the following gradle command is used:
 ```bash
 $ gradle clean test 
 ```
-<img src="images/jenkins-project-page" alt="Jenkins project page">
+<img src="images/jenkins-project-page.jpg" alt="Jenkins project page">
  
 After the build is done the test results are available in `Allure Report` and `Allure TestOps`
-<img src="images/jenkins-build-page" alt="Jenkins build page"> 
+
+<img src="images/jenkins-build-page.jpg" alt="Jenkins build page"> 
 
 [back to Contents ⬆](#contents)
 
