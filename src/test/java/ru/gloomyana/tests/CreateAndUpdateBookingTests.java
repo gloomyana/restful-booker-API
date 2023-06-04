@@ -46,7 +46,7 @@ public class CreateAndUpdateBookingTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Successful update all booking data by id")
+    @DisplayName("Successful update booking data by id")
     public void successfulUpdateBooking() {
         TestData testData = new TestData();
         BookingRequestModel bookingRequestModel = testData.createBookingRequestModal();
@@ -71,7 +71,7 @@ public class CreateAndUpdateBookingTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Unsuccessful try to update booking without auth token")
+    @DisplayName("Unsuccessful update booking without auth token")
     public void UpdateBookingWithoutAuthTokenReturns403() {
         TestData testData = new TestData();
         BookingRequestModel bookingRequestModel = testData.createBookingRequestModal();

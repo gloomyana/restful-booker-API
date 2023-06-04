@@ -18,7 +18,7 @@ import static ru.gloomyana.specs.RestfulBookerSpec.baseRequestSpec;
 public class HealthCheckTest {
 
     @Test
-    @DisplayName("Health check endpoint to confirm whether the API is up")
+    @DisplayName("Health check endpoint to confirm the API is up")
     public void healthCheckReturns201() {
         step("Make health check request and verify it returns status 201", () ->
                 given(baseRequestSpec)
