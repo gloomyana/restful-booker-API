@@ -62,7 +62,11 @@ public class CreateAndUpdateBookingTests extends TestBase {
                         .statusCode(200)
                         .spec(bookingResponseSpec)
                         .extract().as(BookingResponseModel.class));
-        step("Verify successful update all booking data", () ->
-                assertThat(response.equals(bookingRequestModel)));
+        step("Verify successful update firstname", () ->
+                assertThat(response.getFirstname()).isEqualTo(bookingRequestModel.getFirstname()));
+        step("Verify successful update lastname", () ->
+                assertThat(response.getLastname()).isEqualTo(bookingRequestModel.getLastname()));
+        step("Verify successful update total price", () ->
+                assertThat(response.getTotalPrice()).isEqualTo(bookingRequestModel.getTotalPrice()));
     }
 }
