@@ -26,7 +26,7 @@ public class CreateAndUpdateBookingTests extends TestBase {
     @DisplayName("Successful create a new booking")
     public void successfulCreateNewBooking() {
         TestData testData = new TestData();
-        BookingRequestModel bookingRequestModel = testData.createBookingRequestModal();
+        BookingRequestModel bookingRequestModel = testData.createBookingRequestModel();
 
         CreateBookingResponseModel response = step("Make create booking request", () ->
                 given(baseRequestSpec)
@@ -49,7 +49,7 @@ public class CreateAndUpdateBookingTests extends TestBase {
     @DisplayName("Successful update booking data by id")
     public void successfulUpdateBooking() {
         TestData testData = new TestData();
-        BookingRequestModel bookingRequestModel = testData.createBookingRequestModal();
+        BookingRequestModel bookingRequestModel = testData.createBookingRequestModel();
 
         BookingResponseModel response = step("Make update all booking data request", () ->
                 given(baseRequestSpec)
@@ -74,7 +74,7 @@ public class CreateAndUpdateBookingTests extends TestBase {
     @DisplayName("Unsuccessful update booking without auth token")
     public void UpdateBookingWithoutAuthTokenReturns403() {
         TestData testData = new TestData();
-        BookingRequestModel bookingRequestModel = testData.createBookingRequestModal();
+        BookingRequestModel bookingRequestModel = testData.createBookingRequestModel();
 
         step("Make update data request without auth token and verify it returns status code 403", () ->
                 given(baseRequestSpec)

@@ -12,5 +12,4 @@ public class CreateBookingResponseModel {
 
     @JsonProperty("booking")
     private BookingRequestModel bookingRequestModel;
-
 }

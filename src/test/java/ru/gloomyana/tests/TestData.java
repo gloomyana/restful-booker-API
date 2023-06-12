@@ -27,7 +27,7 @@ public class TestData {
 
     boolean depositPaid = faker.bool().bool();
 
-    BookingRequestModel createBookingRequestModal() {
+    BookingRequestModel createBookingRequestModel() {
         BookingRequestModel bookingRequestModel = new BookingRequestModel();
         BookingDatesModel bookingDatesModel = new BookingDatesModel();
 
