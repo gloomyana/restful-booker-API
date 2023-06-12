@@ -3,9 +3,11 @@ package ru.gloomyana.tests;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import ru.gloomyana.config.AuthConfig;
 import ru.gloomyana.models.AuthRequestModel;
 import ru.gloomyana.models.AuthResponseModel;
 
@@ -25,11 +27,10 @@ public class AuthTest {
     @Test
     @DisplayName("Successful create a new auth token")
     public void createAuthToken() {
+        AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
         AuthRequestModel authRequestModel = new AuthRequestModel();
-        TestData testData = new TestData();
-
-        authRequestModel.setUsername(testData.username);
-        authRequestModel.setPassword(testData.password);
+        authRequestModel.setUsername(config.username());
+        authRequestModel.setPassword(config.password());
 
         AuthResponseModel response = step("Make token request with user data", () ->
                 given(baseRequestSpec)

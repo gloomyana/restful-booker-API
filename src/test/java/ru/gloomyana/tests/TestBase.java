@@ -1,7 +1,9 @@
 package ru.gloomyana.tests;
 
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import ru.gloomyana.config.AuthConfig;
 import ru.gloomyana.models.AuthRequestModel;
 import ru.gloomyana.models.AuthResponseModel;
 
@@ -25,9 +27,9 @@ public class TestBase {
     @BeforeEach
     void createAuthToken() {
         AuthRequestModel authRequestModel = new AuthRequestModel();
-        TestData testData = new TestData();
-        authRequestModel.setUsername(testData.username);
-        authRequestModel.setPassword(testData.password);
+        AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
+        authRequestModel.setUsername(config.username());
+        authRequestModel.setPassword(config.password());
 
         AuthResponseModel response = given(baseRequestSpec)
                 .body(authRequestModel)

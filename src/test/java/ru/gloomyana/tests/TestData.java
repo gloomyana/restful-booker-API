@@ -18,9 +18,7 @@ public class TestData {
 
     String[] needs = new String[]{"Breakfast", "Pets are allowed", "Twin beds", "Free parking", "None"};
 
-    String username = "admin",
-            password = "password123",
-            firstName = faker.name().firstName(),
+    String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
             additionalNeeds = faker.options().option(needs);
     int totalPrice = faker.number().numberBetween(100, 1000);
