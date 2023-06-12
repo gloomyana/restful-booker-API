@@ -3,6 +3,8 @@ package ru.gloomyana.specs;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import org.aeonbits.owner.ConfigFactory;
+import ru.gloomyana.config.ApiConfig;
 
 import static io.restassured.RestAssured.with;
 import static io.restassured.filter.log.LogDetail.BODY;
@@ -11,11 +13,12 @@ import static org.hamcrest.Matchers.notNullValue;
 import static ru.gloomyana.helpers.CustomAllureListener.withCustomTemplates;
 
 public class RestfulBookerSpec {
+    static ApiConfig config = ConfigFactory.create(ApiConfig.class, System.getProperties());
     public static RequestSpecification baseRequestSpec = with()
             .filter(withCustomTemplates())
             .log().uri()
             .log().body()
-            .baseUri("https://restful-booker.herokuapp.com");
+            .baseUri(config.baseUrl());
 
     public static ResponseSpecification authResponseSpec = new ResponseSpecBuilder()
             .log(STATUS)
