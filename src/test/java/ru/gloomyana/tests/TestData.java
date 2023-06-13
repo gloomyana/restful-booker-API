@@ -52,11 +52,7 @@ public class TestData {
                 .lastname(lastName)
                 .totalPrice(totalPrice)
                 .depositPaid(depositPaid)
-                .bookingDatesModel(
-                        BookingDatesModel.builder()
-                                .checkin(checkin)
-                                .checkout(checkout)
-                                .build())
+                .bookingDatesModel(new BookingDatesModel(checkin,checkout))
                 .additionalNeeds(additionalNeeds).
                 build();
     }

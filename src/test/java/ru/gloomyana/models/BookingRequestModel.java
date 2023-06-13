@@ -2,13 +2,13 @@ package ru.gloomyana.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import lombok.*;
+import lombok.Builder;
+import lombok.Data;
 import lombok.extern.jackson.Jacksonized;
 
+@Data
 @Builder
 @Jacksonized
-@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BookingRequestModel {
     String firstname, lastname;
