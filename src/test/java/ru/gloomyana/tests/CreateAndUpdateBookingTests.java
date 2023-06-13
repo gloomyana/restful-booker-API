@@ -7,14 +7,16 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.gloomyana.models.BookingRequestModel;
-import ru.gloomyana.models.CreateBookingResponseModel;
 import ru.gloomyana.models.BookingResponseModel;
+import ru.gloomyana.models.CreateBookingResponseModel;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static ru.gloomyana.specs.RestfulBookerSpec.*;
+import static ru.gloomyana.helpers.ApiHelpers.createBooking;
+import static ru.gloomyana.helpers.ApiHelpers.updateBooking;
+import static ru.gloomyana.specs.RestfulBookerSpec.baseRequestSpec;
 
 @Epic("API tests for restful-booker")
 @Feature("Create and update booking")
@@ -28,16 +30,7 @@ public class CreateAndUpdateBookingTests extends TestBase {
         BookingRequestModel bookingRequestModel = testData.createBookingRequestModel();
 
         CreateBookingResponseModel response = step("Make create booking request", () ->
-                given(baseRequestSpec)
-                        .header("Cookie", "token=" + token)
-                        .body(bookingRequestModel)
-                        .contentType(JSON)
-                        .when()
-                        .post("/booking")
-                        .then()
-                        .statusCode(200)
-                        .spec(createBookingResponseSpec)
-                        .extract().as(CreateBookingResponseModel.class));
+                createBooking(bookingRequestModel, token));
         step("Verify successful create new booking id", () ->
                 assertThat(response.getBookingId()).isNotNull());
         step("Verify successful create new booking with request data", () ->
@@ -47,32 +40,23 @@ public class CreateAndUpdateBookingTests extends TestBase {
     @Test
     @DisplayName("Successful update booking data by id")
     public void successfulUpdateBooking() {
-        TestData testData = new TestData();
         BookingRequestModel bookingRequestModel = testData.createBookingRequestModel();
+        int id = createBooking(bookingRequestModel, token).getBookingId();
+        BookingRequestModel newBookingRequestModel = testData.createBookingRequestModel();
 
         BookingResponseModel response = step("Make update all booking data request", () ->
-                given(baseRequestSpec)
-                        .header("Cookie", "token=" + token)
-                        .body(bookingRequestModel)
-                        .contentType(JSON)
-                        .when()
-                        .put("booking/7")
-                        .then()
-                        .statusCode(200)
-                        .spec(bookingResponseSpec)
-                        .extract().as(BookingResponseModel.class));
+                updateBooking(newBookingRequestModel, token, id));
         step("Verify successful update firstname", () ->
-                assertThat(response.getFirstname()).isEqualTo(bookingRequestModel.getFirstname()));
+                assertThat(response.getFirstname()).isEqualTo(newBookingRequestModel.getFirstname()));
         step("Verify successful update lastname", () ->
-                assertThat(response.getLastname()).isEqualTo(bookingRequestModel.getLastname()));
+                assertThat(response.getLastname()).isEqualTo(newBookingRequestModel.getLastname()));
         step("Verify successful update total price", () ->
-                assertThat(response.getTotalPrice()).isEqualTo(bookingRequestModel.getTotalPrice()));
+                assertThat(response.getTotalPrice()).isEqualTo(newBookingRequestModel.getTotalPrice()));
     }
 
     @Test
     @DisplayName("Unsuccessful update booking without auth token")
     public void UpdateBookingWithoutAuthTokenReturns403() {
-        TestData testData = new TestData();
         BookingRequestModel bookingRequestModel = testData.createBookingRequestModel();
 
         step("Make update data request without auth token and verify it returns status code 403", () ->

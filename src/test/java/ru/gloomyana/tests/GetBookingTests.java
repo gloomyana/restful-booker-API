@@ -44,6 +44,6 @@ public class GetBookingTests {
                         .spec(bookingResponseSpec)
                         .extract().as(BookingResponseModel.class));
         step("Verify successful get data request", () ->
-                assertThat(response.getLastname()).isNotNull());
+                assertThat(response.getFirstname()).isNotNull());
     }
 }

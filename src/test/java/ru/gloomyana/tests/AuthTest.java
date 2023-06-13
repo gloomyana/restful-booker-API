@@ -12,11 +12,8 @@ import ru.gloomyana.models.AuthRequestModel;
 import ru.gloomyana.models.AuthResponseModel;
 
 import static io.qameta.allure.Allure.step;
-import static io.restassured.RestAssured.given;
-import static io.restassured.http.ContentType.JSON;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static ru.gloomyana.specs.RestfulBookerSpec.authResponseSpec;
-import static ru.gloomyana.specs.RestfulBookerSpec.baseRequestSpec;
+import static ru.gloomyana.helpers.ApiHelpers.createToken;
 
 @Epic("API tests for restful-booker")
 @Feature("Auth token")
@@ -28,20 +25,13 @@ public class AuthTest {
     @DisplayName("Successful create a new auth token")
     public void createAuthToken() {
         AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
-        AuthRequestModel authRequestModel = new AuthRequestModel();
-        authRequestModel.setUsername(config.username());
-        authRequestModel.setPassword(config.password());
+        AuthRequestModel authRequestModel = AuthRequestModel.builder()
+                .username(config.username())
+                .password(config.password())
+                .build();
 
         AuthResponseModel response = step("Make token request with user data", () ->
-                given(baseRequestSpec)
-                        .body(authRequestModel)
-                        .contentType(JSON)
-                        .when()
-                        .post("/auth")
-                        .then()
-                        .statusCode(200)
-                        .spec(authResponseSpec)
-                        .extract().as(AuthResponseModel.class));
+                createToken(authRequestModel));
         step("Verify successful create token", () ->
                 assertThat(response.getToken()).isNotNull());
     }

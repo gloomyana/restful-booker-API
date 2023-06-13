@@ -6,10 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.extern.jackson.Jacksonized;
 
-
 @Builder
-@Data
 @Jacksonized
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BookingRequestModel {
     String firstname, lastname;

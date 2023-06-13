@@ -4,17 +4,18 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import ru.gloomyana.config.AuthConfig;
+import ru.gloomyana.helpers.ApiHelpers;
 import ru.gloomyana.models.AuthRequestModel;
 import ru.gloomyana.models.AuthResponseModel;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.http.ContentType.JSON;
-import static ru.gloomyana.specs.RestfulBookerSpec.authResponseSpec;
 import static ru.gloomyana.specs.RestfulBookerSpec.baseRequestSpec;
 
 public class TestBase {
-    protected String token;
     TestData testData = new TestData();
+    AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
+    protected String token;
+
     @BeforeAll
     static void checkHealthBeforeTest() {
         given(baseRequestSpec)
@@ -26,20 +27,11 @@ public class TestBase {
 
     @BeforeEach
     void createAuthToken() {
-        AuthRequestModel authRequestModel = new AuthRequestModel();
-        AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
-        authRequestModel.setUsername(config.username());
-        authRequestModel.setPassword(config.password());
-
-        AuthResponseModel response = given(baseRequestSpec)
-                .body(authRequestModel)
-                .contentType(JSON)
-                .when()
-                .post("/auth")
-                .then()
-                .statusCode(200)
-                .spec(authResponseSpec)
-                .extract().as(AuthResponseModel.class);
+        AuthRequestModel authRequestModel = AuthRequestModel.builder()
+                .username(config.username())
+                .password(config.password())
+                .build();
+        AuthResponseModel response = ApiHelpers.createToken(authRequestModel);
         token = response.getToken();
     }
 }
