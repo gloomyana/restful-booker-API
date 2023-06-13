@@ -4,16 +4,23 @@ import com.github.javafaker.Faker;
 import ru.gloomyana.models.BookingDatesModel;
 import ru.gloomyana.models.BookingRequestModel;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class TestData {
     final Faker faker = new Faker();
     String checkin, checkout;
 
+    public LocalDate generateRandomDate() {
+        int year = faker.number().numberBetween(2020, 2050);
+        int month = faker.number().numberBetween(1, 12);
+        int day = faker.number().numberBetween(1, 28);
+        return LocalDate.of(year, month, day);
+    }
+
     public void getDates() {
-        LocalDateTime checkInDate = LocalDateTime.now();
-        LocalDateTime checkOutDate = checkInDate.plusDays(3);
+        LocalDate checkInDate = generateRandomDate();
+        LocalDate checkOutDate = checkInDate.plusDays(faker.number().numberBetween(1, 30));
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         checkin = checkInDate.format(dateTimeFormatter);
         checkout = checkOutDate.format(dateTimeFormatter);
@@ -28,7 +35,7 @@ public class TestData {
         return faker.options().option(items);
     }
 
-    public void GenerateData() {
+    public void generateData() {
         firstName = faker.name().firstName();
         lastName = faker.name().lastName();
         additionalNeeds = getRandomItemFromArray(needs);
@@ -37,7 +44,7 @@ public class TestData {
     }
 
     BookingRequestModel createBookingRequestModel() {
-        GenerateData();
+        generateData();
         getDates();
 
         return BookingRequestModel.builder()
