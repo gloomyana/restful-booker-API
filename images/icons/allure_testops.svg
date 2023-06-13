@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2018 (64-Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="67.7334mm" height="67.7334mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 2025.3 2025.3"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:whitesmoke}
+    .fil3 {fill:url(#id0)}
+    .fil1 {fill:url(#id1)}
+    .fil2 {fill:url(#id2)}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="302.84" y1="1492.82" x2="1492.82" y2="1200.54">
+   <stop offset="0" style="stop-opacity:1; stop-color:#4ADE80"/>
+   <stop offset="0.278431" style="stop-opacity:1; stop-color:#4ADE80"/>
+   <stop offset="0.490196" style="stop-opacity:1; stop-color:#22C55E"/>
+   <stop offset="0.678431" style="stop-opacity:1; stop-color:#22C55E"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#16A34A"/>
+  </linearGradient>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="908.27" y1="448.98" x2="1722.46" y2="1785.09">
+   <stop offset="0" style="stop-opacity:1; stop-color:#16A34A"/>
+   <stop offset="0.219608" style="stop-opacity:1; stop-color:#22C55E"/>
+   <stop offset="0.529412" style="stop-opacity:1; stop-color:#22C55E"/>
+   <stop offset="0.8" style="stop-opacity:1; stop-color:#4ADE80"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#4ADE80"/>
+  </linearGradient>
+  <linearGradient id="id2" gradientUnits="userSpaceOnUse" x1="803.88" y1="240.22" x2="1137.92" y2="1555.44">
+   <stop offset="0" style="stop-opacity:1; stop-color:#4ADE80"/>
+   <stop offset="0.490196" style="stop-opacity:1; stop-color:#4ADE80"/>
+   <stop offset="0.831373" style="stop-opacity:1; stop-color:#86EFAC"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#86EFAC"/>
+  </linearGradient>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0" d="M474.68 0l1075.94 0c262.11,0 474.68,212.57 474.68,474.68l0 1075.94c0,262.11 -212.57,474.68 -474.68,474.68l-1075.94 0c-262.11,-0 -474.68,-212.57 -474.68,-474.68l-0 -1075.94c0,-262.11 212.57,-474.68 474.68,-474.68z"/>
+  <g id="_2381520001088">
+   <path class="fil1" d="M1805.97 1012.65l0 596.61c0,108.54 -87.99,196.71 -196.71,196.71 -79.15,0 -145.14,-56.07 -160.47,-130.54 -2.16,-10.82 -3.42,-22 -3.42,-33.35l0 -629.43c0,-25.06 -2.16,-49.76 -6.31,-73.92 -14.97,-87.44 -56.43,-168.04 -120.44,-232.04 -81.67,-81.67 -190.39,-126.75 -305.97,-126.75 -115.57,0 -224.29,45.08 -305.97,126.75 -64.01,64.01 -105.48,144.6 -120.44,232.04 29.03,-242.14 199.59,-440.65 426.41,-510.97 57.34,-17.67 118.1,-27.22 181.2,-27.22 336.8,0 610.14,272.07 612.12,608.51l0 1.81 0 1.8z"/>
+   <path class="fil2" d="M1805.97 1009.04c-1.98,-336.44 -275.31,-608.51 -612.12,-608.51 -63.11,0 -123.87,9.56 -181.2,27.22 -226.82,70.32 -397.38,268.83 -426.41,510.97 -4.14,24.16 -6.31,48.86 -6.31,73.92 0,25.07 2.16,49.76 6.31,73.93 14.97,87.44 56.43,168.04 120.44,232.04 81.67,81.67 190.4,126.75 305.97,126.75 115.57,0 224.29,-45.08 305.97,-126.75 64.01,-64.01 105.48,-144.6 120.44,-232.04 -29.03,242.14 -199.59,440.65 -426.41,510.97 -57.34,17.67 -118.1,27.22 -181.2,27.22 -338.07,0 -612.12,-274.05 -612.12,-612.12 0,-107.1 21.09,-210.95 62.38,-308.85 40.03,-94.47 97.18,-179.4 169.84,-252.06 72.84,-72.84 157.58,-129.99 252.06,-169.84 98.08,-41.47 201.93,-62.56 309.03,-62.56 107.1,0 210.95,21.09 308.86,62.38 94.47,40.03 179.4,97.18 252.06,169.84 72.84,72.84 129.99,157.58 169.84,252.06 41.11,97 62.03,199.59 62.56,305.43l0.01 0z"/>
+   <path class="fil3" d="M1448.79 1675.43c-40.03,26.5 -82.58,49.22 -127.29,68.16 -97.9,41.29 -201.76,62.38 -308.85,62.38 -107.1,0 -210.95,-21.1 -308.86,-62.38 -94.47,-40.03 -179.39,-97.18 -252.06,-169.84 -72.84,-72.84 -129.99,-157.58 -169.84,-252.06 -41.47,-98.08 -62.56,-201.93 -62.56,-309.03 0,338.06 274.06,612.12 612.12,612.12 63.11,0 123.86,-9.56 181.2,-27.22 226.82,-70.31 397.38,-268.83 426.41,-510.97 4.14,-24.16 6.31,-48.86 6.31,-73.92l0 629.43c0,11.36 1.26,22.54 3.42,33.35l0 -0.01z"/>
+  </g>
+ </g>
+</svg>

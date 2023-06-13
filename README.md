@@ -10,15 +10,15 @@
 - [Telegram notifications](#-telegram-notifications)
 
 ## :hammer_and_wrench: Tools and technologies
-<a href="https://www.jetbrains.com/idea/"><img src="https://github.com/gloomyana/gloomyana/blob/main/icons/intellij_idea.svg" title="IntelliJ IDEA" alt="IntelliJ IDEA" width="50" height="50"/></a>
-<a href="https://www.java.com"><img src="https://github.com/gloomyana/gloomyana/blob/main/icons/java.svg" title="Java" alt="Java" width="50" height="50"/></a>
-<a href="https://junit.org/junit5"><img src="https://github.com/gloomyana/gloomyana/blob/main/icons/junit5.svg" title="JUnit5" alt="JUnit5" width="50" height="50"/></a>
-<a href="https://gradle.org"><img src="https://github.com/gloomyana/gloomyana/blob/main/icons/gradle.svg" title="Gradle" alt="Gradle" width="50" height="50"/></a>
-<a href="https://rest-assured.io"><img src="https://github.com/gloomyana/gloomyana/blob/main/icons/rest_assured.svg" title="REST Assured" alt="REST Assured" width="50" height="50"/></a>
-<a href="https://www.jenkins.io"><img src="https://github.com/gloomyana/gloomyana/blob/main/icons/jenkins.svg" title="Jenkins" alt="Jenkins" width="50" height="50"/></a>
-<a href="https://qameta.io/allure-report"><img src="https://github.com/gloomyana/gloomyana/blob/main/icons/allure_report.svg" title="Allure Report" alt="Allure Report" width="50" height="50"/></a>
-<a href="https://qameta.io"><img src="https://github.com/gloomyana/gloomyana/blob/main/icons/allure_testops.svg" title="Allure Testops" alt="REST Assured" width="50" height="50"/></a>
-<a href="https://web.telegram.org/"><img src="https://github.com/gloomyana/gloomyana/blob/main/icons/telegram.svg" title="Telegram" alt="Telegram" width="50" height="50"/></a> 
+<a href="https://www.jetbrains.com/idea/"><img src="images/icons/intellij_idea.svg" title="IntelliJ IDEA" alt="IntelliJ IDEA" width="50" height="50"/></a>
+<a href="https://www.java.com"><img src="images/icons/java.svg" title="Java" alt="Java" width="50" height="50"/></a>
+<a href="https://junit.org/junit5"><img src="images/icons/junit5.svg" title="JUnit5" alt="JUnit5" width="50" height="50"/></a>
+<a href="https://gradle.org"><img src="images/icons/gradle.svg" title="Gradle" alt="Gradle" width="50" height="50"/></a>
+<a href="https://rest-assured.io"><img src="images/icons/rest_assured.svg" title="REST Assured" alt="REST Assured" width="50" height="50"/></a>
+<a href="https://www.jenkins.io"><img src="images/icons/jenkins.svg" title="Jenkins" alt="Jenkins" width="50" height="50"/></a>
+<a href="https://qameta.io/allure-report"><img src="images/icons/allure_report.svg" title="Allure Report" alt="Allure Report" width="50" height="50"/></a>
+<a href="https://qameta.io"><img src="images/icons/allure_testops.svg" title="Allure Testops" alt="REST Assured" width="50" height="50"/></a>
+<a href="https://web.telegram.org/"><img src="images/icons/telegram.svg" title="Telegram" alt="Telegram" width="50" height="50"/></a> 
 
 ## :white_check_mark: Test cases
 - [x] Successful create a new auth token `POST`
@@ -27,7 +27,7 @@
 - [x] Unsuccessful update booking without auth token `PUT`
 - [x] Get booking request returns not null data `GET`
 - [x] Get all booking ids returns status 200 `GET`
-- [x] Delete request returns status 200 `DELETE`
+- [x] Delete request returns status 201 `DELETE`
 - [x] Health check endpoint to confirm API is up `GET`
 
 ## :arrow_forward: How to run
@@ -43,7 +43,7 @@ After the build is done the test results are available in `Allure Report` and `A
 
 [back to Contents ⬆](#contents)
 
-## <img width="3%" title="Allure Report" src="https://github.com/gloomyana/gloomyana/blob/main/icons/allure_report.svg"> Test results report in [Allure Report](https://jenkins.autotests.cloud/job/gloomyana-restful-booker-API/allure/)
+## <img width="3%" title="Allure Report" src="images/icons/allure_report.svg"> Test results report in [Allure Report](https://jenkins.autotests.cloud/job/gloomyana-restful-booker-API/allure/)
 ### Overview page
 
 Overview page of Allure report contains the following parts:
@@ -82,7 +82,7 @@ Also creates a new **auth token** to use for access to the `PUT` and `DELETE` /b
 
 [back to Contents ⬆](#contents)
 
-## <img width="3%" title="Allure TestOps" src="https://github.com/gloomyana/gloomyana/blob/main/icons/allure_testops.svg"> [Allure TestOps](https://allure.autotests.cloud/project/3221/dashboards) integration
+## <img width="3%" title="Allure TestOps" src="images/icons/allure_testops.svg"> [Allure TestOps](https://allure.autotests.cloud/project/3221/dashboards) integration
 ### Dashboards
 <img src="images/allure-testops-dashboard.jpg" alt="Allure TestOps dashboards">
 
@@ -91,7 +91,7 @@ Also creates a new **auth token** to use for access to the `PUT` and `DELETE` /b
 
 [back to Contents ⬆](#contents)
 
-## <img width="3%" title="Telegram" src="https://github.com/gloomyana/gloomyana/blob/main/icons/telegram.svg"> Telegram notifications
+## <img width="3%" title="Telegram" src="images/icons/telegram.svg"> Telegram notifications
 
 **Telegram bot** sends a report to a specified telegram chat by results of each project build.
 
