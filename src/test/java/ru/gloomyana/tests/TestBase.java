@@ -27,10 +27,7 @@ public class TestBase {
 
     @BeforeEach
     void createAuthToken() {
-        AuthRequestModel authRequestModel = AuthRequestModel.builder()
-                .username(config.username())
-                .password(config.password())
-                .build();
+        AuthRequestModel authRequestModel = new AuthRequestModel(config.username(), config.password());
         AuthResponseModel response = ApiHelpers.createToken(authRequestModel);
         token = response.getToken();
     }

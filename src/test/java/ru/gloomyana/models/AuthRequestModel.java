@@ -1,12 +1,12 @@
 package ru.gloomyana.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.extern.jackson.Jacksonized;
 
-@Jacksonized
 @Builder
 @Data
+@AllArgsConstructor
 public class AuthRequestModel {
     private String username, password;
 }

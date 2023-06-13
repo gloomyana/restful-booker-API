@@ -2,8 +2,8 @@ package ru.gloomyana.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Builder;
-import lombok.Data;
+
+import lombok.*;
 import lombok.extern.jackson.Jacksonized;
 
 @Builder

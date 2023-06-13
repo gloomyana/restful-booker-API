@@ -25,10 +25,7 @@ public class AuthTest {
     @DisplayName("Successful create a new auth token")
     public void createAuthToken() {
         AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
-        AuthRequestModel authRequestModel = AuthRequestModel.builder()
-                .username(config.username())
-                .password(config.password())
-                .build();
+        AuthRequestModel authRequestModel = new AuthRequestModel(config.username(), config.password());
 
         AuthResponseModel response = step("Make token request with user data", () ->
                 createToken(authRequestModel));
