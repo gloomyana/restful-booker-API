@@ -25,7 +25,6 @@ public class CreateAndUpdateBookingTests extends TestBase {
     @Test
     @DisplayName("Successful create a new booking")
     public void successfulCreateNewBooking() {
-        TestData testData = new TestData();
         BookingRequestModel bookingRequestModel = testData.createBookingRequestModel();
 
         CreateBookingResponseModel response = step("Make create booking request", () ->

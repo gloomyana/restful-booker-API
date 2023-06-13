@@ -37,20 +37,20 @@ public class TestData {
     }
 
     BookingRequestModel createBookingRequestModel() {
-        BookingRequestModel bookingRequestModel = new BookingRequestModel();
-        BookingDatesModel bookingDatesModel = new BookingDatesModel();
-
         GenerateData();
         getDates();
-        bookingRequestModel.setFirstname(firstName);
-        bookingRequestModel.setLastname(lastName);
-        bookingRequestModel.setTotalPrice(totalPrice);
-        bookingRequestModel.setDepositPaid(depositPaid);
-        bookingDatesModel.setCheckin(checkin);
-        bookingDatesModel.setCheckout(checkout);
-        bookingRequestModel.setBookingDatesModel(bookingDatesModel);
-        bookingRequestModel.setAdditionalNeeds(additionalNeeds);
 
-        return bookingRequestModel;
+        return BookingRequestModel.builder()
+                .firstname(firstName)
+                .lastname(lastName)
+                .totalPrice(totalPrice)
+                .depositPaid(depositPaid)
+                .bookingDatesModel(
+                        BookingDatesModel.builder()
+                                .checkin(checkin)
+                                .checkout(checkout)
+                                .build())
+                .additionalNeeds(additionalNeeds).
+                build();
     }
 }

@@ -14,7 +14,7 @@ import static ru.gloomyana.specs.RestfulBookerSpec.baseRequestSpec;
 
 public class TestBase {
     protected String token;
-
+    TestData testData = new TestData();
     @BeforeAll
     static void checkHealthBeforeTest() {
         given(baseRequestSpec)

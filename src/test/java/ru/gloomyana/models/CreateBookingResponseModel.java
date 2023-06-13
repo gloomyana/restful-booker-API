@@ -8,8 +8,8 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CreateBookingResponseModel {
     @JsonProperty("bookingid")
-    private int bookingId;
+    int bookingId;
 
     @JsonProperty("booking")
-    private BookingRequestModel bookingRequestModel;
+    BookingRequestModel bookingRequestModel;
 }

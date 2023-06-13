@@ -18,14 +18,14 @@ import static ru.gloomyana.specs.RestfulBookerSpec.baseRequestSpec;
 public class DeleteBookingTests extends TestBase {
 
     @Test
-    @DisplayName("Delete request returns status 200")
-    public void deleteBookingReturns200() {
-        step("Make booking delete request and verify it returns status code 200", () ->
+    @DisplayName("Delete request returns status 201")
+    public void deleteBookingReturns201() {
+        step("Make booking delete request and verify it returns status code 201", () ->
                 given(baseRequestSpec)
                         .header("Cookie", "token=" + token)
                         .when()
-                        .get("/booking/1")
+                        .delete("/booking/1")
                         .then()
-                        .assertThat().statusCode(200));
+                        .assertThat().statusCode(201));
     }
 }
