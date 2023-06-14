@@ -31,7 +31,7 @@
 - [x] Health check endpoint to confirm API is up `GET`
 
 ## :arrow_forward: How to run
-To run tests locally and in [Jenkins](https://jenkins.autotests.cloud/job/gloomyana-restful-booker-API/) the following gradle command is used:
+To run tests locally and in [Jenkins](https://jenkins.autotests.cloud/job/Students/job/gloomyana-restful-booker-API/) the following gradle command is used:
 ```bash
 $ gradle clean test 
 ```
@@ -43,7 +43,7 @@ After the build is done the test results are available in `Allure Report` and `A
 
 [back to Contents ⬆](#contents)
 
-## <img width="3%" title="Allure Report" src="images/icons/allure_report.svg"> Test results report in [Allure Report](https://jenkins.autotests.cloud/job/gloomyana-restful-booker-API/allure/)
+## <img width="3%" title="Allure Report" src="images/icons/allure_report.svg"> Test results report in [Allure Report](https://jenkins.autotests.cloud/job/Students/job/gloomyana-restful-booker-API/allure/)
 ### Overview page
 
 Overview page of Allure report contains the following parts:
