@@ -1,6 +1,7 @@
 package ru.gloomyana.tests;
 
 import com.github.javafaker.Faker;
+import lombok.Setter;
 import ru.gloomyana.models.BookingDatesModel;
 import ru.gloomyana.models.BookingRequestModel;
 
@@ -8,8 +9,16 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class TestData {
+
     final Faker faker = new Faker();
-    String checkin, checkout;
+
+    @Setter
+    String firstName, lastName, additionalNeeds, checkin, checkout;
+    String[] needs = new String[]{"Breakfast", "Pets are allowed", "Twin beds", "Free parking", "None"};
+    @Setter
+    int totalPrice;
+    @Setter
+    boolean depositPaid;
 
     public LocalDate generateRandomDate() {
         int year = faker.number().numberBetween(2020, 2050);
@@ -22,25 +31,20 @@ public class TestData {
         LocalDate checkInDate = generateRandomDate();
         LocalDate checkOutDate = checkInDate.plusDays(faker.number().numberBetween(1, 30));
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        checkin = checkInDate.format(dateTimeFormatter);
-        checkout = checkOutDate.format(dateTimeFormatter);
+        setCheckin(checkInDate.format(dateTimeFormatter));
+        setCheckout(checkOutDate.format(dateTimeFormatter));
     }
-
-    String firstName, lastName, additionalNeeds;
-    String[] needs = new String[]{"Breakfast", "Pets are allowed", "Twin beds", "Free parking", "None"};
-    int totalPrice;
-    boolean depositPaid;
 
     public String getRandomItemFromArray(String[] items) {
         return faker.options().option(items);
     }
 
     public void generateData() {
-        firstName = faker.name().firstName();
-        lastName = faker.name().lastName();
-        additionalNeeds = getRandomItemFromArray(needs);
-        totalPrice = faker.number().numberBetween(100, 1000);
-        depositPaid = faker.bool().bool();
+        setFirstName(faker.name().firstName());
+        setLastName(faker.name().lastName());
+        setAdditionalNeeds(getRandomItemFromArray(needs));
+        setTotalPrice(faker.number().numberBetween(100, 1000));
+        setDepositPaid(faker.bool().bool());
     }
 
     BookingRequestModel createBookingRequestModel() {
@@ -52,7 +56,7 @@ public class TestData {
                 .lastname(lastName)
                 .totalPrice(totalPrice)
                 .depositPaid(depositPaid)
-                .bookingDatesModel(new BookingDatesModel(checkin,checkout))
+                .bookingDatesModel(new BookingDatesModel(checkin, checkout))
                 .additionalNeeds(additionalNeeds).
                 build();
     }
